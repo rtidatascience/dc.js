@@ -309,7 +309,7 @@ dc.errorRowChart = function (parent, chartGroup) {
             return d.value.upper;
         }
 
-        return _chart.cappedValueAccessor()(d, i);
+        return _chart.cappedValueAccessor(d, i);
     };
 
     /**
