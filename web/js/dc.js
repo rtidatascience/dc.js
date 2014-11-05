@@ -3929,7 +3929,8 @@ dc.pieChart = function (parent, chartGroup) {
 
     /**
     #### .radius([radius])
-    Get or set the outer radius. Default radius is 90px.
+    Get or set the outer radius. If the radius is not set, it will be half of the minimum of the
+    chart width and height.
 
     **/
     _chart.radius = function (r) {
@@ -6888,7 +6889,7 @@ dc.rowChart = function (parent, chartGroup) {
 
     function rootValue() {
         var root = _x(0);
-        return root === -Infinity ? _x(1) : root;
+        return (root === -Infinity || root !== root) ? _x(1) : root;
     }
 
     function updateElements(rows) {
